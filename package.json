@@ -2,14 +2,25 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Nick's Portfolio website",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Saumera/portfolio-website.git"
+  },
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "lessc source/stylesheets/index.less static/css/index.css",
+    "clean": "rm -rf static/css && mkdir -p static",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run build-css & nodemon server -e js,pug",
+    "start": "node server"
   },
   "author": "Nick Coronado",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "morgan": "^1.7.0"
+    "less": "^2.7.1",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.2",
+    "pug": "^2.0.0-beta6"
   }
 }
