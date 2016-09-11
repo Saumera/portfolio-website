@@ -1,5 +1,26 @@
+doctype html
 html
   head
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i')
+    link(rel='stylesheet' href='/css/index.css')
     title= title
   body
-    h1 Nick Coronado
+    .content
+      header#header
+        .row
+          nav
+            ul#nav
+              li.page-item
+                a(href='#about') about
+              li.page-item
+                a(href='blog') blog
+      section#section
+        .row
+          .title-text
+            h1.name
+              span.first nick
+              br
+              span.last CORONADO
+            p.serif.description musician.  programmer.  bowler.
+          img.banner-image(src='/images/bg2.jpg')
